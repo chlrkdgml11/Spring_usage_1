@@ -10,6 +10,8 @@ spring:
       ddl-auto: create
     properties:
       hibernate:
+#        로그는 sys.out으로 찍으면 안되고 로그를 통해서 찍어야함
+#        아래 설정은 org.gibernate.SQL과 같은 기능이지만 아래 기능은 sys.out으로 로그 출력
 #        show_sql: ture
         format_sql: true
 
