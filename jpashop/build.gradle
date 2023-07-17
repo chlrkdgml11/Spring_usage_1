@@ -24,6 +24,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
+//	외부 라이브러리로써 SQL 실행 파라미터를 출력해준다
+//	스프링 부트 3.0 이상부터는 추가 설정 필요
+//	개발 단계에서는 편하게 사용해도 되지만 운영시스템에 적용하려면 성능테스트를 하고 사용
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 
 	compileOnly 'org.projectlombok:lombok'

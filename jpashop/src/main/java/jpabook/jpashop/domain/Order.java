@@ -20,6 +20,7 @@ public class Order {
     private Long id;
 
     @ManyToOne(fetch = LAZY)
+    //JoinColumn : 맵핑을 뭐로 할꺼냐
     @JoinColumn(name = "member_id")
     private Member member;
 
