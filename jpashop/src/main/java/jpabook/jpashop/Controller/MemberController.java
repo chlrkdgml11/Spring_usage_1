@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,7 +25,7 @@ public class MemberController {
         return "members/createMemberForm";
     }
 
-//    @Valid는 MemberForm에 있는 @NotEmpty를 확인한다.
+    //    @Valid는 MemberForm에 있는 @NotEmpty를 확인한다.
 //    BindingResult는 오류가 생기면 컨트롤러에서 팅겨버리지만 오류가 BindingResult에 담겨서 실행된다.
     @PostMapping("/members/new")
     public String create(@Valid MemberForm form, BindingResult result) {
@@ -41,5 +42,12 @@ public class MemberController {
 
         memberService.join(member);
         return "redirect:/";
+    }
+
+    @GetMapping("/members")
+    public String list(Model model) {
+        List<Member> members = memberService.findMembers();
+        model.addAttribute("members", members);
+        return "/members/memberList";
     }
 }

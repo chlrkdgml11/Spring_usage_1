@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 //junit실행할때 spring이랑 엮어서 실행
@@ -49,6 +51,20 @@ public class MemberServiceTest {
         //then
         fail("예외가 발생해야 한다.");
 
+    }
+
+    @Test
+    public void 전체_회원_목록_조회() throws Exception {
+        //given
+        Member member = new Member();
+        member.setName("최강희");
+
+        //when
+        memberService.join(member);
+
+        //then
+        List<Member> result = memberService.findMembers();
+        assertEquals(1, result.size());
     }
 
 }
