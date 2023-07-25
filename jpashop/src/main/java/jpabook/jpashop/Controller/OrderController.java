@@ -42,6 +42,4 @@ public class OrderController {
         orderService.order(memberId, itemId, count);
         return "redirect:/orders";
     }
-
-    @GetMapping("orders")
 }
