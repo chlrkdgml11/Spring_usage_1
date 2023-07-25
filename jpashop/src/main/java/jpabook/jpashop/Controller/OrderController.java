@@ -34,7 +34,7 @@ public class OrderController {
         return "order/orderForm";
     }
 
-    @PostMapping("order")
+    @PostMapping("/order")
     public String order(@RequestParam("memberId") Long memberId,
                         @RequestParam("itemId") Long itemId,
                         @RequestParam("count") int count) {
@@ -42,4 +42,6 @@ public class OrderController {
         orderService.order(memberId, itemId, count);
         return "redirect:/orders";
     }
+
+    @GetMapping("orders")
 }
