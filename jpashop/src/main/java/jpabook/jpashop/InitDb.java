@@ -47,10 +47,10 @@ public class InitDb {
             Member member = createMember("userA", "서울", "1", "11111");
             em.persist(member);
 
-            Book book1 = createBook("JPA1", 10000, 100);
+            Book book1 = createBook("JPA1 BOOK", 10000, 100);
             em.persist(book1);
 
-            Book book2 = createBook("JPA2", 20000, 100);
+            Book book2 = createBook("JPA2 BOOK", 20000, 100);
             em.persist(book2);
 
             OrderItem orderItem1 = OrderItem.createOrderItem(book1, 10000, 1);
@@ -89,7 +89,7 @@ public class InitDb {
 
         private static Member createMember(String name, String city, String street, String zipcode) {
             Member member = new Member();
-            member.setName("name");
+            member.setName(name);
             member.setAddress(new Address(city, street, zipcode));
             return member;
         }
