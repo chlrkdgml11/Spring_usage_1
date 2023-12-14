@@ -15,6 +15,7 @@ spring:
 #        아래 설정은 org.gibernate.SQL과 같은 기능이지만 아래 기능은 sys.out으로 로그 출력
 #        show_sql: ture
         format_sql: true
+        default_batch_fetch_size: 100
 
 logging.level:
   org.hibernate.SQL: debug
